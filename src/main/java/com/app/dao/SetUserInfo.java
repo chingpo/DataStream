@@ -23,7 +23,7 @@ public class SetUserInfo {
         UserState userState = new UserState();
         try {
             String rowKey = group +":"+ userid;
-            String result = HbaseUtil.getdata("pvfuninfo", rowKey, "info", "fisrtvisittime");
+            String result = HbaseUtil.getdata("pvinfo", rowKey, "info", "fisrtvisittime");
             if (result == null) {//first click
                 Map<String, String> datamap = new HashMap<String, String>();
                 datamap.put("fisrtvisittime", timestamp + "");
@@ -34,7 +34,7 @@ public class SetUserInfo {
                 userState.setFisrthour(true);
                 userState.setFisrtmonth(true);
             } else {
-                String lastvisittimestring = HbaseUtil.getdata("pvfuninfo", rowKey, "info", "lastvisittime");
+                String lastvisittimestring = HbaseUtil.getdata("pvinfo", rowKey, "info", "lastvisittime");
                 if (StringUtils.isNotBlank(lastvisittimestring)) {
                     long lastvisittime = Long.valueOf(lastvisittimestring);
                     //count by hour
