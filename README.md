@@ -1,2 +1,2 @@
 # DataStream
-A simple demo for analysing real-time data by using flink.
+A simple demo for analysing log data by using flink.
