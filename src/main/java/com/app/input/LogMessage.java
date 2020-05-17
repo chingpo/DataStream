@@ -21,13 +21,9 @@ public class LogMessage<T> {
     private String group;
     private int userid;
     private int thread_id;
-    private String session_id;
     private JSON request;
     private T data;
     private JSON beat;
-    private long runtime;
-    private String version;
-    private String level;
     private Date date;
     private JSON fields;
 
